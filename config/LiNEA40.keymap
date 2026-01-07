@@ -18,10 +18,10 @@
 //mouse cursol
 
 &mmv {
-    delay-ms = <30>;
+    delay-ms = <5>;
     trigger-period-ms = <5>;
-    time-to-max-speed-ms = <150>;
-    acceleration-exponent = <2>;
+    time-to-max-speed-ms = <60>;
+    acceleration-exponent = <1>;
 };
 
 //mouse scroll
@@ -29,8 +29,8 @@
 &msc {
     delay-ms = <3>;
     trigger-period-ms = <3>;
-    time-to-max-speed-ms = <100>;
-    acceleration-exponent = <0>;
+    time-to-max-speed-ms = <80>;
+    acceleration-exponent = <1>;
 };
 
 / {
@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -69,6 +69,7 @@
         Zenkaku {
             bindings = <&kp LA(GRAVE)>;
             key-positions = <12 11>;
+            timeout-ms = <30>;
         };
     };
 
